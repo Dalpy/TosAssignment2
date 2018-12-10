@@ -24,15 +24,18 @@ public class ConcreteRestaurantBill implements RestaurantBill {
                         minPizza = itemsOrdered.get(i).getPrice();
                     }
                     else {
-                        if (itemsOrdered.get(i).getPrice() < minPizza)
+                        if (itemsOrdered.get(i).getPrice() < minPizza) {
                             minPizza = itemsOrdered.get(i).getPrice();
+                        }
                     }
                 }
             }
-            if (countPizze > 10)
+            if (countPizze > 10) {
                 result -= minPizza;
-            if (result > 100)
+            }
+            if (result > 100) {
                 result -= result * 0.05;
+            }
         } else
             throw new RestaurantBillException("Ordine oltre il limite di 20");
         return result;
