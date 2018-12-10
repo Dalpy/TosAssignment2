@@ -36,8 +36,10 @@ public class ConcreteRestaurantBill implements RestaurantBill {
             if (result > 100) {
                 result -= result * 0.05;
             }
-        } else
+        } 
+        else {
             throw new RestaurantBillException("Ordine oltre il limite di 20");
+        }
         return result;
     }
 }
