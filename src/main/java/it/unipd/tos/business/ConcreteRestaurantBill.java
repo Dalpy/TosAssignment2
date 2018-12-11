@@ -15,9 +15,9 @@ public class ConcreteRestaurantBill implements RestaurantBill {
         double result = 0;
         int countPizze = 0;
         double minPizza = 0;
-        if (itemsOrdered.size() <= 20 && !(itemsOrdered.isEmpty())) {
+        if (itemsOrdered.size() <= 20) {
             for (int i = 0; i < itemsOrdered.size(); i++) {
-                result = +itemsOrdered.get(i).getPrice();
+                result += itemsOrdered.get(i).getPrice();
                 if (itemsOrdered.get(i).getItemType().equals(MenuItem.itemType.Pizze)) {
                     countPizze++;
                     if (minPizza == 0) {
@@ -38,7 +38,7 @@ public class ConcreteRestaurantBill implements RestaurantBill {
             }
         } 
         else {
-            throw new RestaurantBillException("Ordine oltre il limite di 20");
+            throw new RestaurantBillException("Ordine oltre il limite di 20 elementi");
         }
         return result;
     }
